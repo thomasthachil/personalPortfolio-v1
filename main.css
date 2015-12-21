@@ -26,7 +26,7 @@ body, html{
 }
 
 h1, h2, h3, h4, h5 {
-  margin: 0; 
+  margin: 0;
   font-family: 'Bebas';
 }
 
@@ -94,7 +94,7 @@ ul {
   position: relative;
   top: 0px;
   transform: translateY(50%);
- 
+
 }
 .hamburger span,
 .hamburger span::before,
@@ -377,7 +377,7 @@ nav a:hover, a:active {
     transform: translateY(-20%);
   }
   .navTextActive a {
-    color: #cb2828 !important; 
+    color: #cb2828 !important;
   }
 
   nav ul {
@@ -494,7 +494,7 @@ nav a:hover, a:active {
   .grid-item-half {
     width: 25%;
   }
-  
+
   .stamp {
     position: absolute;
     right: 0;
@@ -544,4 +544,3 @@ nav a:hover, a:active {
     width: 75%;
 }
 }
-
