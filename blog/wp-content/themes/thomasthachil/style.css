@@ -6,6 +6,7 @@ Description: Custom theme for Thomas Thachil's blog.
 Version: 1.0
 */
 
+/* import fonts */
 
 @font-face {
     font-family: 'lane';
@@ -39,7 +40,10 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-size: 40px
+  font-size: 40px;
+}
+h2 {
+  font-size: 30px;
 }
 
 a {
@@ -61,7 +65,7 @@ ul {
   margin: 0;
 }
 
-/*Rest*/
+/*Navigation*/
 
 #mobileTitle {
   margin: 0px;
@@ -103,7 +107,6 @@ ul {
   position: relative;
   top: 0px;
   transform: translateY(50%);
- 
 }
 .hamburger span,
 .hamburger span::before,
@@ -148,7 +151,6 @@ ul {
   transition-delay: 0s, 0.3s;
 }
 
-
 nav {
 
     width: 225px;
@@ -171,7 +173,6 @@ nav {
   transition: transform 0.3s ease;
 
 }
-
 
 nav a {
     color: #ffffff;
@@ -232,7 +233,6 @@ nav a:hover, a:active {
     padding-top: 25px;
   }
 
-
   .links {
     text-align: center;
     margin-bottom: 10px;
@@ -252,68 +252,14 @@ nav a:hover, a:active {
     top: 50%;
     transform: translateY(-35%);
   }
-
-  @media only screen and (min-height : 680px)  {
-    #linkContainer {
-      width: 100%;
-      position: absolute;
-      bottom: 30px;
-    }
-  }
-
-/*
-  .container {
-    margin: 0;
-    padding: 0px;
-    width: 100%;
-    height: 100%;
-    //display: flex;
-    flex-wrap:wrap;
-    transition: transform 0.3s ease;
-  }
-
-  .container a {
-    color: #000000;
-  }
-
-  .container a:hover, a:active {
-    color: #ffffff;
-  }
-
-  .intro {
-    width: 100%;
-    background-color: #ffffff;
-    height: 50px;
-  }
-  .projects {
-    width: 100%;
-    background-color: #C0794F;
-  }
-  .education {
-    width: 100%;
-    background-color: #6EA3A8;
-  }
-  .experience {
-    width: 100%;
-    background-color: #DABDA2;
-  }
-  .heading {
+  #linkContainer {
     margin-top: 30px;
-    text-align: center;
   }
-  .headingImage {
-    width: 60px;
-    height: auto;
-    padding-bottom: 20px;
-  }
-
-*/
 
 @media only screen and (min-width : 768px) {
 
   #mobileTitle {
     display: none;
-
   }
 
   nav {
@@ -415,7 +361,12 @@ nav a:hover, a:active {
     transform: translateY(-35%);
   }
 
-  @media only screen and (min-height : 680px)  {
+}
+/******/
+/*Blog Page*/
+/******/
+
+@media only screen and (min-height : 510px)  {
     #linkContainer {
       width: 100%;
       position: absolute;
@@ -423,80 +374,44 @@ nav a:hover, a:active {
     }
   }
 
-/*Main Content*/
-
   .container {
-    width: calc(100% - 225px);
+    width: 100%;
     //height: 100%;
-    position: absolute;
-    left: 225px;
-    display: flex;
-    flex-wrap:wrap;
-    transform: translate(0, 0); /*in the case that hamburger is open and screen size changes*/
+    display: block;
+    transition: transform 0.3s ease;    background-color: #A9A9A9;
+    padding: 20px;
   }
 
   .container a {
     color: #000000;
   }
   .container a:hover, a:active {
-    color: #ffffff;
+    color: #cb2828;
   }
 
-  .intro {
-    width: 100%;
-    background-color: #ffffff;
-    height: 50px;
-  }
-  .projects {
-    width: 100%;
-    background-color: #C0794F;
-  }
-  .education {
-    width: 50%;
-    background-color: #6EA3A8;
-  }
-  .experience {
-    width: 50%;
-    background-color: #DABDA2;
-  }
-
-  .heading {
-    margin-top: 30px;
-    text-align: center;
-  }
-  .headingImage {
-    width: 60px;
-    height: auto;
-    padding-bottom: 20px;
-  }
+.gutter-sizer {
+  width: 20px;
 }
 
-
-/******/
-/*Blog Page*/
-/******/
-
-.container {
+.grid {
+    display: block;
+    width: calc((100% / 3) * 2);
+  }
+.grid:after {
+  content: '';
   display: block;
-  background-color: #A9A9A9;
-  //height: 100%;
-  padding: 20px;
+  clear: both;
 }
-
-/*Blog Page*/
+.grid-sizer,
+.post {
+  width: calc(100% - 20px);
+}
 
 .post {
-  //height: auto;
-  width: calc((100% - 20px) / 2);
   background-color: #ffffff;
   float: left;
   margin-bottom: 20px;
 }
-
-.grid-sizer {
-  width: calc((100% - 20px) / 2);
-}
-
 .post-text {
   padding: 20px;
   color: #0A1D3F;
@@ -516,7 +431,6 @@ nav a:hover, a:active {
   margin-right:10px;
   float:left;
 }
-
 .post-date-month {
   display: block;
 }
@@ -537,19 +451,24 @@ nav a:hover, a:active {
   margin-bottom: 10px;
 }
 
+@media only screen and (min-width : 768px ) {
 
-
-.gutter-sizer {
-  width: 20px;
-}
-
-.grid {
-    padding: 0px;
+  .container {
+    width: calc(100% - 225px);
+    //height: 100%;
+    position: absolute;
+    left: 225px;
     display: block;
-    width: calc((100% / 3) * 2);
+    transform: translate(0, 0); /*in the case that hamburger is open and screen size changes*/
+    background-color: #A9A9A9;
+    padding: 20px;
   }
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
+
+.grid-sizer,
+.post {
+  width: calc((100% - 20px) / 2);
 }
+
+@media only screen and (min-width : 1200px ) {}
+
+
