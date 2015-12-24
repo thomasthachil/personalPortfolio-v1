@@ -57,11 +57,15 @@
 				<div class = "post-text">
 					<div class="post-date">
 						<div class="post-date-day">
-							18 /
+							<?php echo get_the_date('j'); ?> /
 						</div>
 						<div class="post-date-month-year">
-							<span class="post-date-month">December</span>
-							<span class="post-date-year">2015</span>
+							<span class="post-date-month">
+								<?php echo get_the_date('F'); ?>
+							</span>
+							<span class="post-date-year">
+								<?php echo get_the_date('Y'); ?>
+							</span>
 						</div>
 					</div>
 					<div class="post-title">
@@ -75,7 +79,7 @@
 					<?php
 				if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 					?><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a><?php
-				} 
+				}
 				?>
 			</div>
 			<?php
@@ -83,17 +87,49 @@
 					?>
 					<div class="post-text">
 						<div class="post-tags">
-							<?php the_tags( '#', ', #', '' ); ?> 
+							<?php the_tags( '#', ', #', '' ); ?>
 						</div>
 					</div>
 					<?php
-				} 
+				}
 				?>
 			</div>
 		<?php endwhile;
 		else :
 			echo '<p>No content found</p>';
 		endif;?>
+	
+	<div class = "sidebar">
+		<div class ="twitter-widget">
+		</div>
+		<div class = "search">
+			<?php get_search_form(); ?>
+		</div>
+		<div class = "tags">
+			<h3 id = "tagTitle">Tags</h3>
+			<?php
+			$args = array(
+				'smallest'                  => 16,
+				'largest'                   => 16,
+				'unit'                      => 'px',
+				'number'                    => 45,
+				'format'                    => 'list',
+				'separator'                 => "\n#",
+				'orderby'                   => 'count',
+				'order'                     => 'DESC',
+				//'exclude'                   => null,
+				//'include'                   => null,
+				'topic_count_text_callback' => default_topic_count_text,
+				//'link'                      => 'view',
+				'taxonomy'                  => 'post_tag',
+				//'echo'                      => true,
+				//'child_of'                  => null, // see Note!
+				);
+			wp_tag_cloud( $args );
+
+			?>
+		</div>
+	</div>
 	</div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
