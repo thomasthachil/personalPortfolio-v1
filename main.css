@@ -44,6 +44,7 @@ header, nav, footer, section, article, div {
 
 img, embed, object, video {
   max-width: 100%;
+  height: auto;
 }
 
 ul {
@@ -63,8 +64,8 @@ ul {
     padding-left: 30px;
     padding-bottom: 30px;
     display: block;
-
   }
+
 #mobileTitle p {
   display: block;
   font-family: 'Bebas';

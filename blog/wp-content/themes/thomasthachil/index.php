@@ -45,96 +45,88 @@
 		</div>
 	</nav>
 	<div class="container">
-		<?php
-		if (have_posts()) :
-			?>
 		<div class = "grid">
 			<div class="grid-sizer"></div>
 			<div class="gutter-sizer"></div>
-			<?php
-			while (have_posts()) : the_post(); ?>
-			<div class="post">
-				<div class = "post-text">
-					<div class="post-date">
-						<div class="post-date-day">
-							<?php echo get_the_date('j'); ?> /
-						</div>
-						<div class="post-date-month-year">
-							<span class="post-date-month">
-								<?php echo get_the_date('F'); ?>
-							</span>
-							<span class="post-date-year">
-								<?php echo get_the_date('Y'); ?>
-							</span>
-						</div>
-					</div>
-					<div class="post-title">
-						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-					</div>
-					<div class="post-excerpt">
-						<?php the_excerpt(); ?>
-					</div>
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+				<div class="post">
+				  <div class = "post-text">
+				    <div class="post-date">
+				      <div class="post-date-day">
+				        <?php echo get_the_date('j'); ?> /
+				      </div>
+				      <div class="post-date-month-year">
+				        <span class="post-date-month">
+				          <?php echo get_the_date('F'); ?>
+				        </span>
+				        <span class="post-date-year">
+				          <?php echo get_the_date('Y'); ?>
+				        </span>
+				      </div>
+				    </div>
+				    <div class="post-title">
+				      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+				    </div>
+				    <div class="post-excerpt">
+				      <?php the_excerpt(); ?>
+				    </div>
+				  </div>
+				  <div class="post-image">
+				    <?php
+				    if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+				      ?><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a><?php
+				    }
+				    ?>
+				  </div>
+				  <?php
+				  if ( has_tag() ) { // check if the post has a Post Thumbnail assigned to it.
+				    ?>
+				    <div class="post-text">
+				      <div class="post-tags">
+				        <?php the_tags( '#', ', #', '' ); ?>
+				      </div>
+				    </div>
+				    <?php
+				  }?>
 				</div>
-				<div class="post-image">
-					<?php
-				if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-					?><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a><?php
-				}
-				?>
-			</div>
-			<?php
-				if ( has_tag() ) { // check if the post has a Post Thumbnail assigned to it.
-					?>
-					<div class="post-text">
-						<div class="post-tags">
-							<?php the_tags( '#', ', #', '' ); ?>
-						</div>
-					</div>
-					<?php
-				}
-				?>
-			</div>
-		<?php endwhile;
-		else :
-			echo '<p>No content found</p>';
-		endif;?>
-	
-	<div class = "sidebar">
-		<div class ="twitter-widget">
+			<?php endwhile; else : ?>
+				<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+			<?php endif; ?>
 		</div>
-		<div class = "search">
-			<?php get_search_form(); ?>
-		</div>
-		<div class = "tags">
-			<h3 id = "tagTitle">Tags</h3>
-			<?php
-			$args = array(
-				'smallest'                  => 16,
-				'largest'                   => 16,
-				'unit'                      => 'px',
-				'number'                    => 45,
-				'format'                    => 'list',
-				'separator'                 => "\n#",
-				'orderby'                   => 'count',
-				'order'                     => 'DESC',
-				//'exclude'                   => null,
-				//'include'                   => null,
-				'topic_count_text_callback' => default_topic_count_text,
-				//'link'                      => 'view',
-				'taxonomy'                  => 'post_tag',
-				//'echo'                      => true,
-				//'child_of'                  => null, // see Note!
+		<div class = "sidebar">
+			<div class ="twitter-widget">
+			</div>
+			<div class = "search">
+				<?php get_search_form(); ?>
+			</div>
+			<div class = "tags">
+				<h3 id = "tagTitle">Tags</h3>
+				<?php
+				$args = array(
+					'smallest'                  => 16,
+					'largest'                   => 16,
+					'unit'                      => 'px',
+					'number'                    => 45,
+					'format'                    => 'list',
+					'separator'                 => "\n#",
+					'orderby'                   => 'count',
+					'order'                     => 'DESC',
+					//'exclude'                   => null,
+					//'include'                   => null,
+					'topic_count_text_callback' => default_topic_count_text,
+					//'link'                      => 'view',
+					'taxonomy'                  => 'post_tag',
+					//'echo'                      => true,
+					//'child_of'                  => null, // see Note!
 				);
-			wp_tag_cloud( $args );
-
-			?>
-		</div>
-	</div>
+				wp_tag_cloud( $args );
+				?>
+			</div>
 	</div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.2.0/imagesloaded.pkgd.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/scripts.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/blog.js"></script>
-<?php get_footer(); ?>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.2.0/imagesloaded.pkgd.min.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/scripts.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/blog.js"></script>
+	<?php get_footer(); ?>
