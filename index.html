@@ -1,378 +1,302 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <!--
-    Modified from the Debian original for Ubuntu
-    Last updated: 2014-03-19
-    See: https://launchpad.net/bugs/1288690
-  -->
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Apache2 Ubuntu Default Page: It works</title>
-    <style type="text/css" media="screen">
-  * {
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-  }
-
-  body, html {
-    padding: 3px 3px 3px 3px;
-
-    background-color: #D8DBE2;
-
-    font-family: Verdana, sans-serif;
-    font-size: 11pt;
-    text-align: center;
-  }
-
-  div.main_page {
-    position: relative;
-    display: table;
-
-    width: 800px;
-
-    margin-bottom: 3px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0px 0px 0px 0px;
-
-    border-width: 2px;
-    border-color: #212738;
-    border-style: solid;
-
-    background-color: #FFFFFF;
-
-    text-align: center;
-  }
-
-  div.page_header {
-    height: 99px;
-    width: 100%;
-
-    background-color: #F5F6F7;
-  }
-
-  div.page_header span {
-    margin: 15px 0px 0px 50px;
-
-    font-size: 180%;
-    font-weight: bold;
-  }
-
-  div.page_header img {
-    margin: 3px 0px 0px 40px;
-
-    border: 0px 0px 0px;
-  }
-
-  div.table_of_contents {
-    clear: left;
-
-    min-width: 200px;
-
-    margin: 3px 3px 3px 3px;
-
-    background-color: #FFFFFF;
-
-    text-align: left;
-  }
-
-  div.table_of_contents_item {
-    clear: left;
-
-    width: 100%;
-
-    margin: 4px 0px 0px 0px;
-
-    background-color: #FFFFFF;
-
-    color: #000000;
-    text-align: left;
-  }
-
-  div.table_of_contents_item a {
-    margin: 6px 0px 0px 6px;
-  }
-
-  div.content_section {
-    margin: 3px 3px 3px 3px;
-
-    background-color: #FFFFFF;
-
-    text-align: left;
-  }
-
-  div.content_section_text {
-    padding: 4px 8px 4px 8px;
-
-    color: #000000;
-    font-size: 100%;
-  }
-
-  div.content_section_text pre {
-    margin: 8px 0px 8px 0px;
-    padding: 8px 8px 8px 8px;
-
-    border-width: 1px;
-    border-style: dotted;
-    border-color: #000000;
-
-    background-color: #F5F6F7;
-
-    font-style: italic;
-  }
-
-  div.content_section_text p {
-    margin-bottom: 6px;
-  }
-
-  div.content_section_text ul, div.content_section_text li {
-    padding: 4px 8px 4px 16px;
-  }
-
-  div.section_header {
-    padding: 3px 6px 3px 6px;
-
-    background-color: #8E9CB2;
-
-    color: #FFFFFF;
-    font-weight: bold;
-    font-size: 112%;
-    text-align: center;
-  }
-
-  div.section_header_red {
-    background-color: #CD214F;
-  }
-
-  div.section_header_grey {
-    background-color: #9F9386;
-  }
-
-  .floating_element {
-    position: relative;
-    float: left;
-  }
-
-  div.table_of_contents_item a,
-  div.content_section_text a {
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  div.table_of_contents_item a:link,
-  div.table_of_contents_item a:visited,
-  div.table_of_contents_item a:active {
-    color: #000000;
-  }
-
-  div.table_of_contents_item a:hover {
-    background-color: #000000;
-
-    color: #FFFFFF;
-  }
-
-  div.content_section_text a:link,
-  div.content_section_text a:visited,
-   div.content_section_text a:active {
-    background-color: #DCDFE6;
-
-    color: #000000;
-  }
-
-  div.content_section_text a:hover {
-    background-color: #000000;
-
-    color: #DCDFE6;
-  }
-
-  div.validator {
-  }
-    </style>
-  </head>
-  <body>
-    <div class="main_page">
-      <div class="page_header floating_element">
-        <img src="/icons/ubuntu-logo.png" alt="Ubuntu Logo" class="floating_element"/>
-        <span class="floating_element">
-          Apache2 Ubuntu Default Page
-        </span>
-      </div>
-<!--      <div class="table_of_contents floating_element">
-        <div class="section_header section_header_grey">
-          TABLE OF CONTENTS
-        </div>
-        <div class="table_of_contents_item floating_element">
-          <a href="#about">About</a>
-        </div>
-        <div class="table_of_contents_item floating_element">
-          <a href="#changes">Changes</a>
-        </div>
-        <div class="table_of_contents_item floating_element">
-          <a href="#scope">Scope</a>
-        </div>
-        <div class="table_of_contents_item floating_element">
-          <a href="#files">Config files</a>
-        </div>
-      </div>
--->
-      <div class="content_section floating_element">
-
-
-        <div class="section_header section_header_red">
-          <div id="about"></div>
-          It works!
-        </div>
-        <div class="content_section_text">
-          <p>
-                This is the default welcome page used to test the correct 
-                operation of the Apache2 server after installation on Ubuntu systems.
-                It is based on the equivalent page on Debian, from which the Ubuntu Apache
-                packaging is derived.
-                If you can read this page, it means that the Apache HTTP server installed at
-                this site is working properly. You should <b>replace this file</b> (located at
-                <tt>/var/www/html/index.html</tt>) before continuing to operate your HTTP server.
-          </p>
-
-
-          <p>
-                If you are a normal user of this web site and don't know what this page is
-                about, this probably means that the site is currently unavailable due to
-                maintenance.
-                If the problem persists, please contact the site's administrator.
-          </p>
-
-        </div>
-        <div class="section_header">
-          <div id="changes"></div>
-                Configuration Overview
-        </div>
-        <div class="content_section_text">
-          <p>
-                Ubuntu's Apache2 default configuration is different from the
-                upstream default configuration, and split into several files optimized for
-                interaction with Ubuntu tools. The configuration system is
-                <b>fully documented in
-                /usr/share/doc/apache2/README.Debian.gz</b>. Refer to this for the full
-                documentation. Documentation for the web server itself can be
-                found by accessing the <a href="/manual">manual</a> if the <tt>apache2-doc</tt>
-                package was installed on this server.
-
-          </p>
-          <p>
-                The configuration layout for an Apache2 web server installation on Ubuntu systems is as follows:
-          </p>
-          <pre>
-/etc/apache2/
-|-- apache2.conf
-|       `--  ports.conf
-|-- mods-enabled
-|       |-- *.load
-|       `-- *.conf
-|-- conf-enabled
-|       `-- *.conf
-|-- sites-enabled
-|       `-- *.conf
-          </pre>
-          <ul>
-                        <li>
-                           <tt>apache2.conf</tt> is the main configuration
-                           file. It puts the pieces together by including all remaining configuration
-                           files when starting up the web server.
-                        </li>
-
-                        <li>
-                           <tt>ports.conf</tt> is always included from the
-                           main configuration file. It is used to determine the listening ports for
-                           incoming connections, and this file can be customized anytime.
-                        </li>
-
-                        <li>
-                           Configuration files in the <tt>mods-enabled/</tt>,
-                           <tt>conf-enabled/</tt> and <tt>sites-enabled/</tt> directories contain
-                           particular configuration snippets which manage modules, global configuration
-                           fragments, or virtual host configurations, respectively.
-                        </li>
-
-                        <li>
-                           They are activated by symlinking available
-                           configuration files from their respective
-                           *-available/ counterparts. These should be managed
-                           by using our helpers
-                           <tt>
-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2enmod">a2enmod</a>,
-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2dismod">a2dismod</a>,
-                           </tt>
-                           <tt>
-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2ensite">a2ensite</a>,
-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2dissite">a2dissite</a>,
-                            </tt>
-                                and
-                           <tt>
-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2enconf">a2enconf</a>,
-                                <a href="http://manpages.debian.org/cgi-bin/man.cgi?query=a2disconf">a2disconf</a>
-                           </tt>. See their respective man pages for detailed information.
-                        </li>
-
-                        <li>
-                           The binary is called apache2. Due to the use of
-                           environment variables, in the default configuration, apache2 needs to be
-                           started/stopped with <tt>/etc/init.d/apache2</tt> or <tt>apache2ctl</tt>.
-                           <b>Calling <tt>/usr/bin/apache2</tt> directly will not work</b> with the
-                           default configuration.
-                        </li>
-          </ul>
-        </div>
-
-        <div class="section_header">
-            <div id="docroot"></div>
-                Document Roots
-        </div>
-
-        <div class="content_section_text">
-            <p>
-                By default, Ubuntu does not allow access through the web browser to
-                <em>any</em> file apart of those located in <tt>/var/www</tt>,
-                <a href="http://httpd.apache.org/docs/2.4/mod/mod_userdir.html">public_html</a>
-                directories (when enabled) and <tt>/usr/share</tt> (for web
-                applications). If your site is using a web document root
-                located elsewhere (such as in <tt>/srv</tt>) you may need to whitelist your
-                document root directory in <tt>/etc/apache2/apache2.conf</tt>.
-            </p>
-            <p>
-                The default Ubuntu document root is <tt>/var/www/html</tt>. You
-                can make your own virtual hosts under /var/www. This is different
-                to previous releases which provides better security out of the box.
-            </p>
-        </div>
-
-        <div class="section_header">
-          <div id="bugs"></div>
-                Reporting Problems
-        </div>
-        <div class="content_section_text">
-          <p>
-                Please use the <tt>ubuntu-bug</tt> tool to report bugs in the
-                Apache2 package with Ubuntu. However, check <a
-                href="https://bugs.launchpad.net/ubuntu/+source/apache2">existing
-                bug reports</a> before reporting a new bug.
-          </p>
-          <p>
-                Please report bugs specific to modules (such as PHP and others)
-                to respective packages, not to the web server itself.
-          </p>
-        </div>
-
-
-
-
-      </div>
-    </div>
-    <div class="validator">
-    <p>
-      <a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88" /></a>
-    </p>
-    </div>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Thomas Thachil</title>
+		<meta name="author" content="Thomas Thachil">
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+	</head>
+	<body>
+		<div id = "mobileTitle">
+			<p>Thomas<br>Thachil</p>
+			<button id = "hamburger" class="hamburger"> <span></span>
+			</button>
+		</div>
+		<nav>
+		     <div id = "title">Thomas<br>Thachil</div>
+		     <ul>
+		     	<li class = "navItems">
+		     		<img src="icons2/Spaceship-red.png" class = "navIcons">
+		     		<div class = "redVerticalDivider"></div>
+		     		<p class = "navTextActive navText"><a href ="home.html">About</a></p>
+		     	</li>
+		     	<li class = "navItems">
+		     		<img src="icons2/Compactcam-white.png" class = "navIcons">
+		     		<div class = "whiteVerticalDivider"></div>
+		     		<p class = "navText"><a href ="photography.html">Photography</a></p>
+		     	</li>
+		     	<li class = "navItems">
+		     		<img src="icons2/Gentleman-white.png" class = "navIcons">
+		     		<div class = "whiteVerticalDivider"></div>
+		     		<p class = "navText "><a href ="blog.html">Blog</a></p>
+		     	</li>
+		     </ul>
+
+		     <div id = "linkContainer">
+		     	<div class = "links">
+		     		<a href="https://drive.google.com/file/d/0B-l1GJSIBgflTEJPU1Y4czFvZWM/view?usp=sharing">
+		     			<img class = "linkIcon" src="icons2/resume.png">
+		     			<div class = "link">
+		     				<a href="https://drive.google.com/file/d/0B-l1GJSIBgflaldEME5MRnducnc/view?usp=sharing">Résumé</a>
+		     			</div>
+		     		</a>
+			    </div>
+			    <div class = "links">
+			    	<a href="https://www.linkedin.com/in/thomasthachil">
+			    		<img class = "linkIcon" src="icons2/In-White-48px-R.png">
+			     		<div class = "link">
+			     			<a href="https://www.linkedin.com/in/thomasthachil">LinkedIn</a>
+			     		</div>
+			    	</a>
+			     </div>
+			     <div class = "links">
+			    	<a href="https://github.com/tmthachil">
+			    		<img class = "linkIcon" src="icons2/GitHub-Mark-Light-120px-plus.png">
+			     		<div class = "link">
+			     			<a href="https://github.com/tmthachil">Github</a>
+			     		</div>
+			    	</a>
+			     </div>
+			     <div class = "links">
+			    	<a href="mailto:contact@thomasthachil.com">
+			    		<img class = "linkIcon" src="icons2/mail icon white.png">
+			     		<div class = "link">
+			     			<a href="mailto:contact@thomasthachil.com">Email</a>
+			     		</div>
+			    	</a>
+			     </div>
+			     <div class = "links">
+			    	<a href="https://twitter.com/tthachil">
+			    		<img class = "linkIcon" src="icons2/TwitterLogo_white.png">
+			     		<div class = "link">
+			     			<a href="https://twitter.com/tthachil">Twitter</a>
+			     		</div>
+			    	</a>
+			     </div>
+		     </div>
+		</nav>
+		<div class="container">
+
+			<div class = "intro">
+			</div>
+			<div id="particles-js"></div>
+			<div class="overParticles">
+				<div class = "projects section">
+					<div class = "heading">
+						<img class = "headingImage" src="icons2/projects.png">
+						<h1><a href="about/projects.html">Projects</a></h1>
+					</div>
+					<div class="projectsContent">
+						<div class = "subsection">
+							<div class="infoLeft subContentButton8">
+								<h2>Personal Portfolio</h2>
+							</div>
+							<div class="infoRight">
+								<h3>DEC 2015 - PRESENT</h3>
+							</div>
+							<div class = "subContent subContent8">
+								<h5>Since this site has multiple functions, I needed a custom design, and hence I decided to code this website from scratch. Not relying on templates or even responsive utilities (such as Bootsrap) helped me further improve my skills in HTML, CSS, and Javascript.  In the future, I hope to use the site as a playground to experiment and improve my skills in web development..</h5>
+								<br>
+								<ul>
+									<li><h5>utilizes particles.js for background particles in About page</h5></li>
+									<li><h5>integrated packery.js plugin which intelligently figures out layout for images of various sizes, while allowing one to rearrange images, in Photography page</h5></li>
+									<li><h5>used Wordpress to run backend of blog, created a completely custom theme</h5></li>
+								</ul>
+								<br>
+								<h4>Languages:</h4>
+								<h5>HTML, CSS, Javascript/jQuery, PHP</h5>
+								<br>
+								<h4>Utilities:</h4>
+								<h5>WordPress, Packery.js, Particles.js</h5>
+							</div>
+						</div>
+						<div class = "subContentButton">
+							<INPUT class = "subContentButton8 dropdownArrow" type="image" src="icons2/dropdown.png" value="">
+						</div>
+						<div class = "subsection">
+							<div class="infoLeft subContentButton7">
+								<h2>Website for <i>Screen Sustain</i> Presents: <i>The Lorax</i></h2>
+							</div>
+							<div class="infoRight">
+								<h3>OCT 2015</h3>
+							</div>
+							<div class = "subContent subContent7">
+								<h5>This was actually the  first time I had ever created a website by coding it. It was for a film screening project in my English 1102 course at Georgia Tech.</h5>
+								<br>
+								<ul>
+									<li><h5>focused on responsive web design by using a Bootstrap template while also customizing the website to fit project theme</h5></li>
+									<li><h5>battled lack of budget by choosing to host website using <a href = https://pages.github.com/>GitHub Pages</a> and free domain through <a href = "http://www.freenom.com/en/index.html?lang=en">Freenom</a></h5></li>
+									<li><h5>started development of an online edition with a custom WordPress theme that would would provide a simple content management system for editors and writers to use, while maintaining a professional-looking digital newspaper design</h5></li>
+								</ul>
+								<br>
+								<h4>Languages:</h4>
+								<h5>HTML, CSS, PHP</h5>
+								<br>
+								<h4>Utilities:</h4>
+								<h5>WordPress, Bootstrap</h5>
+							</div>
+						</div>
+						<div class = "subContentButton">
+							<INPUT class = "subContentButton7 dropdownArrow" type="image" src="icons2/dropdown.png" value="">
+						</div>
+						<div class = "subsection">
+							<div class="infoLeft subContentButton6">
+								<h2>Integrate technology in <i>The Junto</i></h2>
+							</div>
+							<div class="infoRight">
+								<h3>AUG 2014 - JUN 2015</h3>
+							</div>
+							<div class = "subContent subContent6">
+								<h5>Being a technology enthusiast, as Editor-in-Chief of my high school newspaper, I made an effort to ground technology into the everyday workings of the newspaper.</h5>
+								<br>
+								<ul>
+									<li><h5>optimized logistics and workflow using collaboration tools such as Google Drive, significantly improving file organization and accessibility</h5></li>
+									<li><h5>created a social media presence with the creation of a Twitter account, helping increase readership and speed of news delivery</h5></li>
+									<li><h5>started development of an online edition with a custom WordPress theme that would would provide a simple content management system for editors and writers to use, while maintaining a professional-looking digital newspaper design</h5></li>
+								</ul>
+								<br>
+								<h4>Languages:</h4>
+								<h5>HTML, CSS, PHP</h5>
+								<br>
+								<h4>Utilities:</h4>
+								<h5>WordPress, Bootstrap</h5>
+							</div>
+						</div>
+						<div class = "subContentButton">
+							<INPUT class = "subContentButton6 dropdownArrow" type="image" src="icons2/dropdown.png" value="">
+						</div>
+					</div>
+				</div>
+				<div class = "experience section">
+					<div class = "heading">
+						<img class = "headingImage" src="icons2/experience.png">
+						<h1><a href="about/experience.html">Experience</a></h1>
+					</div>
+					<div class = "subsection">
+						<div class="infoLeft subContentButton5">
+							<h2>Computer Administrator</h2>
+							<h2 class = "light">Easton, Pennsylvania</h2>
+						</div>
+						<div class="infoRight">
+							<img class="companyLogo" src="images/eastonpcc.png">
+							<h3>JAN 2013 - JUL 2015</h3>
+						</div>
+						<div class = "subContent subContent5">
+							<ul>
+								<li><h5>Managed all computer systems including EMR & practice management tools, configured local networks and devices, designed website and logo.</h5></li>
+								<li><h5>Helped physicians and staff learn and use EMR system, provided on-site technical support.</h5></li>
+								<li><h5>Was in charge of transition to electronic medical records, helping find a cloud-based EMR + billing system that was both intuitive and cost-effective, ultimately saving the practice $10,000 a year.</h5></li>
+							</ul>
+						</div>
+					</div>
+					<div class = "subContentButton">
+						<INPUT class = "subContentButton5 dropdownArrow" type="image" src="icons2/dropdown.png" value="">
+					</div>
+				</div>
+
+				<div class = "education section">
+					<div class = "heading">
+						<img class = "headingImage" src="icons2/education.png">
+						<h1><a href="about/education.html">Education</a></h1>
+					</div>
+					<div class = "subsection">
+						<div class="infoLeft subContentButton4">
+							<h2>Georgia Institute of Technology</h2>
+							<h2 class = "light">Atlanta, Georgia</h2>
+						</div>
+						<div class="infoRight">
+							<img class="companyLogo" src="images/gt.png">
+							<h3>AUG 2015 - PRESENT</h3>
+						</div>
+						<div class = "subContent subContent4">
+							<h4>B.S. in Computer Science</h4>
+							<h5>Devices & Media Track <br> August 2015 - May 2019 (expected)</h5>
+							<br>
+							<h4>Relevant Coursework</h4>
+							<ul>
+								<li><h5>ECE2020: Fundamentals of Digital System Design</h5></li>
+								<li><h5>CS1371: Computing for Engineers (Matlab)</h5></li>
+								<li><h5>CS1331: Introduction to Object-Oriented Programming</h5></li>
+							</ul>
+							<br>
+							<h4>Clubs & Organizations</h4>
+							<ul>
+								<li><h5>IEEE</h5></li>
+								<li><h5>Georgia Tech Photography Club</h5></li>
+								<li><h5>Georgia Tech India Club</h5></li>
+							</ul>
+						</div>
+					</div>
+					<div class = "subContentButton">
+						<INPUT class = "subContentButton4 dropdownArrow" type="image" src="icons2/dropdown.png" value="">
+					</div>
+					<div class = "subsection">
+						<div class="infoLeft subContentButton3">
+							<h2>Easton Area High School</h2>
+							<h2 class = "light">Easton, Pennsylvania</h2>
+						</div>
+						<div class="infoRight">
+							<img class="companyLogo" src="images/easton.png">
+							<h3>AUG 2011 - JUN 2015</h3>
+						</div>
+						<div class = "subContent subContent3">
+							<h4>Relevant Coursework</h4>
+							<ul>
+								<li><h5>AP Computer Science</h5></li>
+							</ul>
+							<br>
+							<h4>Clubs & Organizations</h4>
+							<ul>
+								<li><h5>The Junto (school newspaper)</h5></li>
+								<li><h5>Key Club</h5></li>
+								<li><h5>Future Business Leaders of America</h5></li>
+								<li><h5>Technology Student Association</h5></li>
+							</ul>
+						</div>
+					</div>
+					<div class = "subContentButton">
+						<INPUT class = "subContentButton3 dropdownArrow" type="image" src="icons2/dropdown.png" value="">
+					</div>
+					<div class = "subsection">
+						<div class="infoLeft subContentButton2">
+							<h2>Management & Technology Summer Institute (M&TSI)</h2>
+							<h2 class = "light">University of Pennsylvania</h2>
+						</div>
+						<div class="infoRight">
+							<img class="companyLogo" src="images/mt.png">
+							<h3>AUG 2015 - PRESENT</h3>
+						</div>
+						<div class = "subContent subContent2">
+							<h5>A three-week summer program, where I explored the integration of technology and management principles. I worked with faculty and successful entrepreneurs and visited leading technology and financial firms including Morgan Stalney, Radiate Media, and The Bressler Group. Throughout the program, I worked in a group to create and present a novel technology product and business plan.</h5>
+						</div>
+					</div>
+					<div class = "subContentButton">
+						<INPUT class = "subContentButton2 dropdownArrow" type="image" src="icons2/dropdown.png" value="">
+					</div>
+					<div class = "subsection">
+						<div class="infoLeft subContentButton1">
+							<h2>Summer Academy in Applied Science & Technology (SAAST)</h2>
+							<h2 class = "light">University of Pennsylvania</h2>
+						</div>
+						<div class="infoRight">
+							<img class="companyLogo" src="images/saast.png">
+							<h3>JUL - AUG 2013</h3>
+						</div>
+						<div class = "subContent subContent1">
+							<h5>A three-week summer program, where I first learned to code, with C for embedded programming. Over the course of the program, I gained experience with mechanical design/CAD (Solidworks), electronics, as well as rapid prototyping, working with 3D printers and laser cutters. </h5>
+						</div>
+					</div>
+					<div class = "subContentButton">
+						<INPUT class = "subContentButton1 dropdownArrow" type="image" src="icons2/dropdown.png" value="">
+					</div>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="js/particles.min.js"></script>
+		<script src="js/scripts.js"></script>
+		<script src="js/home.js"></script>
+	</body>
 </html>
-
