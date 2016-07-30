@@ -382,8 +382,7 @@ nav a:hover, a:active {
     height: auto;
     display: block;
     transition: transform 0.3s ease;
-    background-color: #c8c8c8;
-    //background-image: url('icons/bg.png');
+    background-image: url('icons/bg.png');
     padding: 20px;
     position: absolute;
     left;0px;
